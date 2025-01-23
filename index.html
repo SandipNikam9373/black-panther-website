@@ -38,11 +38,84 @@
       font-size: 2rem;
     }
     .service-box {
-      border: 2px solid #333;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 10px;
-      background-color: #222;
+      <section id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 1</h3>
+                    <button class="toggle-btn" onclick="toggleCode('code1')">View Code</button>
+                    <pre id="code1" class="hidden"><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+int main() {
+    int *numbers;
+    int n = 10;
+    int sum = 0;
+    numbers = (int*)malloc(n * sizeof(int));
+    if (numbers == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &numbers[i]); 
+    }
+    for (int i = 0; i < n; i++) {
+        sum += numbers[i];
+    }
+    printf("The sum of the numbers is: %d\n", sum);
+    free(numbers);
+    return 0;
+}
+                    </code></pre>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 2</h3>
+                    <button class="toggle-btn" onclick="toggleCode('code2')">View Code</button>
+                    <pre id="code2" class="hidden"><code>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;ctype.h&gt;
+int main() {
+    char *str;
+    int n;
+    int vowels = 0, consonants = 0;
+    printf("Enter the number of characters: ");
+    scanf("%d", &n);
+    str = (char *)calloc(n, sizeof(char));
+    if (str == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+    printf("Enter a string: ");
+    getchar();
+    fgets(str, n, stdin);
+    for (int i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);
+        if (ch >= 'a' && ch <= 'z') {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+    printf("Vowels: %d, Consonants: %d\n", vowels, consonants);
+    free(str);
+    return 0;
+}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     }
     footer {
       text-align: center;
