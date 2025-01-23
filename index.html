@@ -196,6 +196,54 @@ int main() {
     return 0;
 }
                     </code></pre>
+      /div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 4</h3>
+                    <pre><code>
+#include <stdio.h>
+#include <stdlib.h> 
+int main() 
+{
+    int *numbers;    
+    int n;           
+    int min, max;    
+    printf("Enter the number of integers: ");
+    scanf("%d", &n);
+    numbers = (int *)calloc(n, sizeof(int));
+    if (numbers == NULL) 
+{
+        printf("Memory allocation failed.\n");
+        return 1; 
+    }
+    printf("Enter %d integers:\n", n);
+    for (int i = 0; i < n; i++)
+ {
+        printf("Number %d: ", i + 1);
+        scanf("%d", &numbers[i]);
+    }
+    min = max = numbers[0];
+    for (int i = 1; i < n; i++) 
+{
+        if (numbers[i] < min) 
+{
+            min = numbers[i];
+        }
+        if (numbers[i] > max)
+ {
+            max = numbers[i];
+        }
+    }
+    int range = max - min;
+    printf("Minimum value: %d\n", min);
+    printf("Maximum value: %d\n", max);
+    printf("Range (Max - Min): %d\n", range);
+    free(numbers);
+
+   return 0;
+}
+      </code></pre>
                 </div>
             </div>
         </div>
