@@ -69,6 +69,138 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Services</a>
+            <pre><code><section id="services">
+    <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 1</h3>
+                    <pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    int *numbers;
+    int n = 10;
+    int sum = 0;
+    numbers = (int*)malloc(n * sizeof(int));
+    if (numbers == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+    printf("Enter %d integers:\n", n);
+
+    for (int i = 0; i < n; i++) {
+        printf("Enter number %d: ", i + 1);
+        scanf("%d", &numbers[i]); 
+    }
+    for (int i = 0; i < n; i++) {
+        sum += numbers[i];
+    }
+    printf("The sum of the numbers is: %d\n", sum);
+    free(numbers);
+    return 0;
+}
+                    </code></pre>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 2</h3>
+                    <pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+int main() {
+    char *str;
+    int n;
+    int vowels = 0, consonants = 0;
+
+    printf("Enter the number of characters (including null terminator): ");
+    scanf("%d", &n);
+
+    str = (char *)calloc(n, sizeof(char));
+    if (str == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+
+    printf("Enter a string: ");
+    getchar();
+    fgets(str, n, stdin);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);
+
+        if (ch >= 'a' && ch <= 'z') {
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowels++;
+            } else {
+                consonants++;
+            }
+        }
+    }
+
+    printf("Number of vowels: %d\n", vowels);
+    printf("Number of consonants: %d\n", consonants);
+
+    free(str);
+    return 0;
+}
+                    </code></pre>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-box">
+                    <h3>Program No: 3</h3>
+                    <pre><code>
+#include <stdio.h>
+#include <stdlib.h>
+int main() {
+    float *numbers;
+    int initial_size = 5, expanded_size = 8;
+    float sum = 0, average;
+    numbers = (float *)malloc(initial_size * sizeof(float));
+    if (numbers == NULL) {
+        printf("Memory allocation failed.\n");
+        return 1;
+    }
+    printf("Enter 5 float numbers:\n");
+    for (int i = 0; i < initial_size; i++) {
+        printf("Number %d: ", i + 1);
+        scanf("%f", &numbers[i]);
+    }
+    printf("The first 5 numbers are:\n");
+    for (int i = 0; i < initial_size; i++) {
+        printf("%.2f ", numbers[i]);
+    }
+    printf("\n");
+    numbers = (float *)realloc(numbers, expanded_size * sizeof(float));
+    if (numbers == NULL) {
+        printf("Memory reallocation failed.\n");
+        return 1;
+    }
+    printf("Enter 3 more float numbers:\n");
+    for (int i = initial_size; i < expanded_size; i++) {
+        printf("Number %d: ", i + 1);
+        scanf("%f", &numbers[i]);
+    }
+    for (int i = 0; i < expanded_size; i++) {
+        sum += numbers[i];
+    }
+    average = sum / expanded_size;
+    printf("The sum of all numbers is: %.2f\n", sum);
+    printf("The average of all numbers is: %.2f\n", average);
+    free(numbers);
+    return 0;
+}
+                    </code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+  </section>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Blog</a>
