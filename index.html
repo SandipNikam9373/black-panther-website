@@ -1,108 +1,316 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLACK PANTHER - Services</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Black Panther - Innovating with Power & Speed">
+  <title>Black Panther</title>
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #fff;
+      background-color: #121212;
+      overflow-x: hidden;
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      background: linear-gradient(90deg, rgba(255, 64, 129, 0.8), rgba(0, 123, 255, 0.8));
+      padding: 15px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    nav ul li {
+      margin: 0 30px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff4081;
+      text-shadow: 0 0 10px rgba(255, 64, 129, 0.9);
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      color: white;
+      padding: 20px;
+    }
+
+    .hero h1 {
+      font-size: 5em;
+      font-weight: 700;
+      background: linear-gradient(90deg, rgba(255, 64, 129, 1), rgba(0, 123, 255, 1));
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.5em;
+      margin-bottom: 40px;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+
+    .cta-btn {
+      background: linear-gradient(90deg, rgba(255, 64, 129, 1), rgba(0, 123, 255, 1));
+      padding: 15px 35px;
+      color: #fff;
+      font-size: 1.3em;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: linear-gradient(90deg, rgba(255, 64, 129, 1), rgba(0, 255, 204, 1));
+      transform: scale(1.1);
+    }
+
+    /* Sections Styling */
+    section {
+      padding: 80px 20px;
+      background: #181818;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 3.5em;
+      font-weight: 700;
+      color: #ff4081;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    /* Cards */
+    .card {
+      background-color: #242424;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      margin: 20px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .card:hover {
+      background-color: #333;
+      transform: translateY(-10px);
+    }
+
+    .card h3 {
+      color: #ff4081;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      font-size: 1.1em;
+      color: #ccc;
+    }
+
+    /* Programs Section */
+    #programs {
+      display: none;
+      background-color: #2a2a2a;
+      padding: 30px;
+      border-radius: 15px;
+      margin-top: 40px;
+    }
+
+    .programs-btn {
+      background: #ff4081;
+      padding: 15px 30px;
+      color: white;
+      font-size: 1.2em;
+      border-radius: 10px;
+      cursor: pointer;
+      margin: 20px auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .programs-btn:hover {
+      background: #e1006b;
+      transform: scale(1.1);
+    }
+
+    pre {
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 20px;
+      font-size: 1.1em;
+      overflow-x: auto;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #212121;
+      padding: 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .social-icons {
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 28px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #ff4081;
+    }
+
+    /* Animation Effects */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Parallax Effect */
+    .parallax {
+      background: url('https://via.placeholder.com/1500x800') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+    }
+
+    .parallax .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-    <section id="services">
-        <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <div class="row">
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-                <!-- Service 1 -->
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <h3>Program No: 1</h3>
-                        <button class="toggle-btn" onclick="toggleCode('code1')">View Code</button>
-                        <pre id="code1" class="hidden"><code>
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-int main() {
-    int *numbers;
-    int n = 10;
-    int sum = 0;
-    numbers = (int*)malloc(n * sizeof(int));
-    if (numbers == NULL) {
-        printf("Memory allocation failed.\n");
-        return 1;
-    }
-    printf("Enter %d integers:\n", n);
-    for (int i = 0; i < n; i++) {
-        printf("Enter number %d: ", i + 1);
-        scanf("%d", &numbers[i]); 
-    }
-    for (int i = 0; i < n; i++) {
-        sum += numbers[i];
-    }
-    printf("The sum of the numbers is: %d\n", sum);
-    free(numbers);
-    return 0;
-}
-                        </code></pre>
-                    </div>
-                </div>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <h1>Welcome to Black Panther</h1>
+    <p>Innovation and Excellence at its Peak</p>
+    <a href="#services" class="cta-btn fade-in">Explore Our Services</a>
+  </section>
 
-                <!-- Service 2 -->
-                <div class="col-md-4">
-                    <div class="service-box">
-                        <h3>Program No: 2</h3>
-                        <button class="toggle-btn" onclick="toggleCode('code2')">View Code</button>
-                        <pre id="code2" class="hidden"><code>
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;ctype.h&gt;
-int main() {
-    char *str;
-    int n;
-    int vowels = 0, consonants = 0;
-    printf("Enter the number of characters: ");
-    scanf("%d", &n);
-    str = (char *)calloc(n, sizeof(char));
-    if (str == NULL) {
-        printf("Memory allocation failed.\n");
-        return 1;
-    }
-    printf("Enter a string: ");
-    getchar();
-    fgets(str, n, stdin);
-    for (int i = 0; str[i] != '\0'; i++) {
-        char ch = tolower(str[i]);
-        if (ch >= 'a' && ch <= 'z') {
-            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                vowels++;
-            } else {
-                consonants++;
-            }
-        }
-    }
-    printf("Vowels: %d, Consonants: %d\n", vowels, consonants);
-    free(str);
-    return 0;
-}
-                        </code></pre>
-                    </div>
-                </div>
+  <!-- Blog Section -->
+  <section id="blog">
+    <h2>Latest Blog Posts</h2>
+    <div class="card fade-in">
+      <h3>Blog Title 1</h3>
+      <p>Excerpt of the blog post...</p>
+      <a href="#">Read More</a>
+    </div>
+    <div class="card fade-in">
+      <h3>Blog Title 2</h3>
+      <p>Excerpt of the blog post...</p>
+      <a href="#">Read More</a>
+    </div>
+  </section>
 
-            </div>
-        </div>
-    </section>
+  <!-- Services Section -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="card fade-in">
+      <h3>Consulting</h3>
+      <p>We offer professional consulting services.</p>
+    </div>
+    <div class="card fade-in">
+      <h3>Product Development</h3>
+      <p>Transforming ideas into market-ready products.</p>
+    </div>
+    <div class="card fade-in">
+      <h3>Business Solutions</h3>
+      <p>Innovative solutions for businesses of all sizes.</p>
+    </div>
+  </section>
 
-    <script>
-    function toggleCode(id) {
-        var element = document.getElementById(id);
-        if (element.classList.contains("hidden")) {
-            element.classList.remove("hidden");
-            element.classList.add("show");
-        } else {
-            element.classList.add("hidden");
-            element.classList.remove("show");
-        }
-    }
-    </script>
+  <!-- Hidden Programs Section -->
+  <section>
+    <a class="programs-btn fade-in" onclick="document.getElementById('programs').style.display='block';">View My Programs</a>
+    <div id="programs">
+      <h3>Program 1: Memory Allocation in C</h3>
+      <pre><code>#include &lt;stdio.h&gt;...</code></pre>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Black Panther. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">FB</a>
+      <a href="#">TW</a>
+      <a href="#">IG</a>
+    </div>
+  </footer>
 
 </body>
 </html>
