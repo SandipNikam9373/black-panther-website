@@ -60,3 +60,33 @@ footer {
 code {
     font-family: "Courier New", monospace;
 }
+.hidden {
+    display: none;
+}
+
+pre {
+    background-color: #f5f5f5;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 14px;
+}
+
+code {
+    font-family: "Courier New", monospace;
+}
+
+.toggle-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.toggle-btn:hover {
+    background-color: #0056b3;
+}
