@@ -1,0 +1,51 @@
+
+body {
+  background-color: #1c1c1c;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+}
+
+.navbar a {
+  color: #f1f1f1;
+}
+
+.hero {
+  background: url('your-hero-image.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  animation: fadeInUp 1s ease-out;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+.service-box {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: #222;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+}
+    
